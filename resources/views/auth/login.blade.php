@@ -1,36 +1,12 @@
+@extends('layouts.app')
 
-<head>
-<title>StudentsCorner Login</title>
-
-<meta charset="utf-8">
-
-
-	 <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
-
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
-
-	<!-- Custom Theme files -->
-	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
-	<!-- //Custom Theme files -->
-	<!-- web font -->
-	<link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
-	<!-- //web font -->
-
-</head>
-<body>
+@section('login')
 
 <!-- main -->
 <div class="w3layouts-main">
 	<div class="bg-layer">
 		<h1>Login</h1>
-		<div class="header-main">
+		<div class="header-main" style="max-width: 450px;">
 			<div class="main-icon">
 				<span class="fa fa-eercast"></span>
 			</div>
@@ -68,7 +44,7 @@
                       {{ __('Forgot Your Password?') }}
                   </a>
               @endif</p>
-						<p class="right"><a class="nav-link" href="{{ route('register') }}">{{ __('New User? Register') }}</a>
+						<p class="right"><a class="btn btn-link" href="{{ route('register') }}">{{ __('New User? Register') }}</a>
 						<div class="clear"></div>
 					</div>
 				</form>
@@ -84,3 +60,5 @@
 		</div>
 	</div>
 </div>
+
+@endsection

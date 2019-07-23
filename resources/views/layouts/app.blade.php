@@ -12,16 +12,43 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <script>
+         addEventListener("load", function () {
+             setTimeout(hideURLbar, 0);
+         }, false);
+
+         function hideURLbar() {
+             window.scrollTo(0, 1);
+         }
+     </script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+
+    <!-- Custom Theme files -->
+
+  	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+  	<!-- //Custom Theme files -->
+  	<!-- web font -->
+  	<link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
+  	<!-- //web font -->
+
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+
 </head>
 <body>
+
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -72,9 +99,20 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py">
             @yield('content')
+            @yield('login')
         </main>
     </div>
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
