@@ -32,6 +32,8 @@ body {
 }
 /*-- main --*/
 
+
+
 h1 {
 	font-size: 45px;
 	color: #fff;
@@ -154,6 +156,9 @@ a {
     background: transparent;
     letter-spacing: 1px;
 }
+
+
+
 .header-left-bottom input[type="password"]{
 	outline: none;
 	font-size: 15px;
@@ -174,6 +179,8 @@ a {
 	background: transparent;
     letter-spacing: 1px;
 }
+
+
 .header-left-bottom button.btn {
     background: #007cc0;
     color: #fff;

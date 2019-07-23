@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('login')
+@section('content')
 
 <!-- main -->
 <div class="w3layouts-main">
@@ -15,7 +15,7 @@
         @csrf
 					<div class="icon1">
 						<span class="fa fa-user"></span>
-              <input id="email" type="email" placeholder="Email Address" required="" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+              <input id="email" type="email" placeholder="Email Address" required="" class=" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
               @error('email')
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -24,7 +24,7 @@
 					</div>
 					<div class="icon1">
 						<span class="fa fa-lock"></span>
-            <input id="password" type="password" placeholder="Password" required="" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+            <input id="password" type="password" placeholder="Password" required="" class=" @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
             @error('password')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
