@@ -19,7 +19,7 @@
                       <label for="exampleInputEmail1">Semester</label>
                       <select name="semester_name" class="form-control">
                         @foreach($semesters as $semester)
-                        <option value="{{$semester->id}}">{{$semester->name}}</option>
+                        <option value="{{$semester->name}}">{{$semester->name}}</option>
                         @endforeach
                       </select>
                     </div>
@@ -27,7 +27,7 @@
                       <label for="exampleInputEmail1">Branch</label>
                       <select name="branch_name" class="form-control">
                         @foreach($branches as $branch)
-                        <option value="{{$branch->id}}">{{$branch->name}}</option>
+                        <option value="{{$branch->name}}">{{$branch->name}}</option>
                         @endforeach
                       </select>
                     </div>
@@ -35,10 +35,18 @@
                       <label for="exampleInputEmail1">Subject</label>
                       <select name="subject_name" class="form-control">
                         @foreach($subjects as $subject)
-                        <option value="{{$subject->id}}">{{$subject->name}}</option>
+                        <option value="{{$subject->name}}">{{$subject->name}}</option>
                         @endforeach
                       </select>
                     </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Year</label>
+                      <input name="year" class="form-control">
+                      </input>
+                    </div>
+
+
                     <div class="form-group">
                       <label>Description</label>
                       <textarea name="description" rows="10" cols="30" class="form-control">

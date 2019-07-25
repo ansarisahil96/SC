@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\pdf;
+use App\upload;
 
 class HomeController extends Controller
 {
@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pdfs=pdf::latest()->paginate(2);
-        return view('home',compact('pdfs'));
+        $uploads=upload::latest()->paginate(2);
+        return view('home',compact('uploads'));
     }
 }

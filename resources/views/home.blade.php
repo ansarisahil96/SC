@@ -13,28 +13,28 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
-                    @foreach($pdfs as $pdf)
+
+                    @foreach($uploads as $upload)
                     <div class="jumbotron jumbotron-fluid">
                       <div class="container">
                         <br>
-                        <p class="lead"><h1>{{$pdf->description}}</h1></p>
+                        <p class="lead"><h1><a target="_blank" href="{{url('/storage/'.$upload->file)}}">{{$upload->description}}</a></a></h1></p>
                         <br>
                         <br>
-                        <p class="lead">Branch:{{$pdf->branch}}</p>
+                        <p class="lead">Branch:{{$upload->branch_name}}</p>
                         <br>
                         <br>
-                        <p class="lead">Subject:{{$pdf->subject}}</p>
+                        <p class="lead">Subject:{{$upload->subject_name}}</p>
                         <br>
                         <br>
-                        <p class="lead">Year:{{$pdf->year}}</p>
+                        <p class="lead">Year:{{$upload->year}}</p>
                         <br>
-                        <p class="lead">Votes:{{$pdf->votes}}</p>
+                        <p class="lead">Votes:{{$upload->votes}}</p>
                         <br>
                       </div>
                     </div>
                     @endforeach
-                    {{$pdfs->links()}}
+                    {{$uploads->links()}}
                     <br><br>
                     <a  class="lead" href="{{ route('store') }}">Upload</a>
                 </div>

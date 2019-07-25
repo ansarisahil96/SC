@@ -20,6 +20,9 @@ class CreateUploadsTable extends Migration
             $table->string('branch_name');
             $table->string('semester_name');
             $table->string('file');
+            $table->string('year');
+            $table->bigInteger('votes')->default(0);
+            $table->string('description');
             $table->timestamps();
         });
     }
