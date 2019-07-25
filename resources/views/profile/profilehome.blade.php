@@ -8,13 +8,10 @@ active
 
 
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+<div class="bg-layer">
+   
 
-                <div class="card-body">
+              <div class="header-main" style="max-width: 950px;">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -26,8 +23,14 @@ active
 
                     @if(count($uploads) > 0)
                         @foreach($uploads as $upload)
-                        <div class="jumbotron jumbotron-fluid">
-                          <div class="container">
+                       
+                        <div style="height: auto;
+                                    width:auto;
+                                    background-color:#0E5D7B;
+                                    margin-top: 0px;
+                                    background:linear-gradient(  #ffffff,#ffeffa);">
+                        <div class="jumbotron jumbotron-fluid" style="background: none !important;">
+                        <div class="container">
                             <br>
                             <p class="lead"><h1><a target="_blank" href="{{url('/storage/'.$upload->file)}}">{{$upload->description}}</a></a></h1></p>
                             <br>
@@ -40,9 +43,11 @@ active
                             <br>
                             <p class="lead">Year:{{$upload->year}}</p>
                             <br>
+                            <br>
                             <p class="lead">Votes:{{$upload->votes}}</p>
                             <br>
                           </div>
+                        </div>
                         </div>
                         @endforeach
                         {{$uploads->links()}}
@@ -57,9 +62,7 @@ active
                   @endif
                     <br><br>
               
-                </div>
-            </div>
-        </div>
-    </div>
+                
+           
 </div>
 @endsection

@@ -2,15 +2,12 @@
 
 @section('content')
 
-<!-- main -->
-<div class="w3layouts-main">
-	<div class="bg-layer">
-		<h1>Login</h1>
-		<div class="header-main" style="max-width: 450px;">
-			<div class="main-icon">
-				<span class="fa fa-eercast"></span>
-			</div>
-			<div class="header-left-bottom">
+<div class="bg-layer">
+		    <h1>Login</h1>
+		    <div class="header-main" style="max-width: 450px;">
+			    <div class="main-icon">
+				    <span class="fa fa-eercast"></span>
+			    </div>
 			<form method="POST" action="{{ route('login') }}">
         @csrf
 					<div class="icon1">
@@ -49,16 +46,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="social">
-				<ul>
-					<li>{{ __('or login using :') }} </li>
-					<li><a href="#" class="facebook"><span class="fa fa-facebook"></span></a></li>
-					<li><a href="#" class="twitter"><span class="fa fa-twitter"></span></a></li>
-					<li><a href="#" class="google"><span class="fa fa-google-plus"></span></a></li>
-				</ul>
+			
 			</div>
-		</div>
-	</div>
-</div>
 
 @endsection

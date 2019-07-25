@@ -8,13 +8,8 @@ active
 
 
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
+<div class="bg-layer">
+    <div class="header-main" style="max-width: 950px;">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -22,10 +17,15 @@ active
                     @endif
 
                     @foreach($uploads as $upload)
-                    <div class="jumbotron jumbotron-fluid">
+                    <div style="height: auto;
+                                width:auto;
+                                background-color:#0E5D7B;
+                                margin-top: 0px;
+                                background:linear-gradient(  #ffffff,#ffeffa);">
+                    <div class="jumbotron jumbotron-fluid" style="background: none !important;">
                       <div class="container">
                         <br>
-                        <p class="lead"><h1><a target="_blank" href="{{url('/storage/'.$upload->file)}}">{{$upload->description}}</a></a></h1></p>
+                        <p class="lead"><h1><a style="color: #595959; text-decoration:none" target="_blank" href="{{url('/storage/'.$upload->file)}}">{{$upload->description}}</a></a></h1></p>
                         <br>
                         <br>
                         <p class="lead">Branch : {{$upload->branch_name}}</p>
@@ -44,13 +44,12 @@ active
                         <br>
                       </div>
                     </div>
+                    </div>
                     @endforeach
                     {{$uploads->links()}}
                     <br><br>
                     
                 </div>
-            </div>
-        </div>
-    </div>
+           
 </div>
 @endsection
