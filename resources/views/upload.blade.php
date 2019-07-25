@@ -9,9 +9,11 @@ active
 <script src="{{ asset('js/upload.js') }}" defer></script>
 <link href="{{ asset('css/upload.css') }}" rel="stylesheet">
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="bg-layer">
+   
+
+                <div class="header-main" style="max-width: 650px;">
+        
             <div class="card">
                 <div class="card-header">Upload a PDF</div>
 
@@ -81,7 +83,7 @@ active
                     
                 </div>
             </div>
-        </div>
+        
     </div>
 </div>
 @endsection

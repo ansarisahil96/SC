@@ -116,11 +116,17 @@
                 </div>
             </div>
         </nav>
-
+         <!-- main -->
+    <div class="w3layouts-main">
+	    
+			<div class="header-left-bottom">
         <main class="py">
             @yield('content')
 
         </main>
+        </div>
+        </div>
+        
     </div>
 
 
