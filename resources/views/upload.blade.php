@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
+<script src="{{ asset('js/upload.js') }}" defer></script>
+<link href="{{ asset('css/upload.css') }}" rel="stylesheet">
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -54,19 +58,23 @@
                     </div>
                     <br>
                     <div class="form-group">
+                      <label>Upload the pdf</label>
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="fileUpload" id="file"
-                        >
-                        <label class="custom-file-label" >Upload a file</label>
                         <br><br>
+                        <input type="file" class="custom-file-input" name="fileUpload" id="file-upload"
+                        >
+                        <label class="custom-file-label" for="file-upload"><div id="file-upload-filename"></div></label>
+
+                        <br>
                         @error('fileUpload')
                           <span class="text-danger"><strong>&nbsp;{{$message}}</strong></span>
                       @enderror
-                        <br><br>
                       </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+                    <br><br>
+                    <a  class="lead" href="{{ route('home') }}">Search</a>
                 </div>
             </div>
         </div>
