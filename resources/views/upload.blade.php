@@ -78,7 +78,7 @@ active
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                     <br><br>
-                    <a  class="lead" href="{{ route('home') }}">Search</a>
+                    
                 </div>
             </div>
         </div>

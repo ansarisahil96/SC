@@ -56,9 +56,7 @@ active
                   </div>
                   @endif
                     <br><br>
-                    <a  class="lead" href="{{ route('store') }}">Upload</a>
-                    <br><br>
-                    <a  class="lead" href="{{ route('home') }}">Search</a>
+              
                 </div>
             </div>
         </div>

@@ -47,7 +47,7 @@ active
                     @endforeach
                     {{$uploads->links()}}
                     <br><br>
-                    <a  class="lead" href="{{ route('store') }}">Upload</a>
+                    
                 </div>
             </div>
         </div>
