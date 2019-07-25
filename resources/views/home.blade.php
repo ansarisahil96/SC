@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('homeactive')
+active
+@endsection
+
 @section('content')
 
 
@@ -24,22 +28,26 @@
                         <p class="lead"><h1><a target="_blank" href="{{url('/storage/'.$upload->file)}}">{{$upload->description}}</a></a></h1></p>
                         <br>
                         <br>
-                        <p class="lead">Branch:{{$upload->branch_name}}</p>
+                        <p class="lead">Branch : {{$upload->branch_name}}</p>
                         <br>
                         <br>
-                        <p class="lead">Subject:{{$upload->subject_name}}</p>
+                        <p class="lead">Subject : {{$upload->subject_name}}</p>
                         <br>
                         <br>
-                        <p class="lead">Year:{{$upload->year}}</p>
+                        <p class="lead">Uploaded by : {{$upload->user->name}}</p>
                         <br>
-                        <p class="lead">Votes:{{$upload->votes}}</p>
+                        <br>
+                        <p class="lead">Year : {{$upload->year}}</p>
+                        <br>
+                        <br>
+                        <p class="lead">Votes : {{$upload->votes}}</p>
                         <br>
                       </div>
                     </div>
                     @endforeach
                     {{$uploads->links()}}
                     <br><br>
-                    <a  class="lead" href="{{ route('store') }}">Upload</a>
+                    
                 </div>
             </div>
         </div>

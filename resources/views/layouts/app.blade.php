@@ -78,13 +78,23 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+                        <li class="nav-item">
+                            <a class="nav-link @yield('homeactive')" href="{{ route('home') }}">{{ __('Home') }}</a>
+                        </li>
+                        <li class="nav-item @yield('uploadactive')">
+                            <a class="nav-link" href="{{ route('upload') }}">{{ __('Upload PDF') }}</a>
+                        </li>
+                            <li class="nav-item dropdown @yield('profileactive')">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="{{ route('profile',Auth::user()->id) }}">
+                                  <a class="dropdown-item" href="{{ route('profile',['name'=>Auth::user()->name,'id'=>Auth::user()->id])}}">
+
+
+
+
                                       {{ __('Your Uploads') }}
                                   </a>
 

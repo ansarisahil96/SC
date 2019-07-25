@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('uploadactive')
+active
+@endsection
+
 @section('content')
 
 <script src="{{ asset('js/upload.js') }}" defer></script>
@@ -74,7 +78,7 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                     <br><br>
-                    <a  class="lead" href="{{ route('home') }}">Search</a>
+                    
                 </div>
             </div>
         </div>

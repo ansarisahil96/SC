@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('profileactive')
+active
+@endsection
+
 @section('content')
 
 
@@ -17,29 +21,42 @@
                         </div>
                     @endif
 
-                    @foreach($uploads as $upload)
-                    <div class="jumbotron jumbotron-fluid">
-                      <div class="container">
-                        <br>
-                        <p class="lead"><h1><a target="_blank" href="{{url('/storage/'.$upload->file)}}">{{$upload->description}}</a></a></h1></p>
-                        <br>
-                        <br>
-                        <p class="lead">Branch:{{$upload->branch_name}}</p>
-                        <br>
-                        <br>
-                        <p class="lead">Subject:{{$upload->subject_name}}</p>
-                        <br>
-                        <br>
-                        <p class="lead">Year:{{$upload->year}}</p>
-                        <br>
-                        <p class="lead">Votes:{{$upload->votes}}</p>
-                        <br>
-                      </div>
+
+
+
+                    @if(count($uploads) > 0)
+                        @foreach($uploads as $upload)
+                        <div class="jumbotron jumbotron-fluid">
+                          <div class="container">
+                            <br>
+                            <p class="lead"><h1><a target="_blank" href="{{url('/storage/'.$upload->file)}}">{{$upload->description}}</a></a></h1></p>
+                            <br>
+                            <br>
+                            <p class="lead">Branch:{{$upload->branch_name}}</p>
+                            <br>
+                            <br>
+                            <p class="lead">Subject:{{$upload->subject_name}}</p>
+                            <br>
+                            <br>
+                            <p class="lead">Year:{{$upload->year}}</p>
+                            <br>
+                            <p class="lead">Votes:{{$upload->votes}}</p>
+                            <br>
+                          </div>
+                        </div>
+                        @endforeach
+                        {{$uploads->links()}}
+                  @else
+                  <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                      <br>
+                      <p class="lead">You Have not uploaded anything yet!</p>
+                      <br>
                     </div>
-                    @endforeach
-                    {{$uploads->links()}}
+                  </div>
+                  @endif
                     <br><br>
-                    <a  class="lead" href="{{ route('store') }}">Upload</a>
+              
                 </div>
             </div>
         </div>
