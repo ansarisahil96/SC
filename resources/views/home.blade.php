@@ -13,8 +13,30 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    
+                    @foreach($pdfs as $pdf)
+                    <div class="jumbotron jumbotron-fluid">
+                      <div class="container">
+                        <br>
+                        <p class="lead"><h1>{{$pdf->description}}</h1></p>
+                        <br>
+                        <br>
+                        <p class="lead">Branch:{{$pdf->branch}}</p>
+                        <br>
+                        <br>
+                        <p class="lead">Subject:{{$pdf->subject}}</p>
+                        <br>
+                        <br>
+                        <p class="lead">Year:{{$pdf->year}}</p>
+                        <br>
+                        <p class="lead">Votes:{{$pdf->votes}}</p>
+                        <br>
+                      </div>
+                    </div>
+                    @endforeach
+                    {{$pdfs->links()}}
+                    <br><br>
+                    <a  class="lead" href="{{ route('store') }}">Upload</a>
                 </div>
             </div>
         </div>
