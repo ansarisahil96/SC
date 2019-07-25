@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('uploadactive')
+active
+@endsection
+
 @section('content')
 
 <script src="{{ asset('js/upload.js') }}" defer></script>

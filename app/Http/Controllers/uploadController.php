@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\pdf;
+
 use App\branch;
 use App\semester;
 use App\subject;

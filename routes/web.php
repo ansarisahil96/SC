@@ -23,4 +23,7 @@ Route::get('/upload', 'uploadController@store')->name('store');
 
 Route::post('/upload', 'uploadController@upload')->name('upload');
 
-Route::get('/profile/{id}', 'ProfileController@index')->name('profile');
+// Route::get('/profile/{name}', 'ProfileController@index')->name('profile');
+
+Route::get('profile/{id}/{name}', [
+'as' => 'profile', 'uses' => 'ProfileController@index']);
