@@ -1,14 +1,10 @@
 @extends('layouts.app')
 
 
-@section('homeactive')
-active disabled
-@endsection
+
 
 
 @section('content')
-
-
 
 <div class="bg-layer">
     <div class="header-main" style="max-width: 950px;">
@@ -57,4 +53,5 @@ active disabled
                 </div>
 
 </div>
+
 @endsection
