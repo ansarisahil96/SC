@@ -146,7 +146,7 @@
                 </div>
 
                 <div class="links">
-                    <p>A stop for people who love poop</p>
+                    <p>A place where you can find all your notes</p>
                   </div>
               </div>
             </div>

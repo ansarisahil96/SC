@@ -37,6 +37,9 @@ active
                             <p class="lead"><h1><a class="display-4" style="color :  #595959; text-decoration : none" target="_blank" href="{{url('/storage/'.$upload->file)}}">{{$upload->description}}</a></a></h1></p>
                             <br>
                             <br>
+                            <p class="lead"><strong>Semester</strong> : {{$upload->semester_name}}</p>
+                            <br>
+                            <br>
                             <p class="lead"><strong>Branch</strong> : {{$upload->branch_name}}</p>
                             <br>
                             <br>

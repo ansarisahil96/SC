@@ -49,11 +49,7 @@ active disabled
                         @endforeach
                       </select>
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1"><strong>Year</strong></label>
-                      <input name="year" class="form-control">
-                      </input>
-                    </div>
+                    
                     <button type="submit" class="btn btn-primary">Search</button>
                     </form>
                     <br><br>

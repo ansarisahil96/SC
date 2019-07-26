@@ -27,7 +27,11 @@ class SearchController extends Controller
   public function search(Request $request)
   {
 
-    $uploads=Upload::where('branch_name',$request->branch_name)->paginate(2);
+    $uploads=Upload::where([
+                    ['branch_name','=',$request->branch_name],
+                    ['semester_name','=',$request->semester_name],
+                    ['subject_name','=',$request->subject_name]
+                ])->get();
     return view('search.result',compact('uploads'));
 
   }
