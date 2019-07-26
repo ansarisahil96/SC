@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('uploadactive')
+
+@section('searchactive')
 active disabled
 @endsection
 
+
 @section('content')
 
-<script src="{{ asset('js/upload.js') }}" defer></script>
-<link href="{{ asset('css/upload.css') }}" rel="stylesheet">
 
 <div class="bg-layer">
 
@@ -15,7 +15,7 @@ active disabled
                 <div class="header-main" style="max-width: 650px;">
 
             <div class="card">
-                <div class="card-header"><strong>Upload Notes</strong></div>
+                <div class="card-header"><strong>Search Notes</strong></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -23,7 +23,7 @@ active disabled
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('searchquery') }}">
                       @csrf
                     <div class="form-group">
                       <label for="exampleInputEmail1"><strong>Semester</strong></label>
@@ -49,34 +49,8 @@ active disabled
                         @endforeach
                       </select>
                     </div>
-
-                    <div class="form-group">
-                      <label for="exampleInputEmail1"><strong>Year</strong></label>
-                      <input name="year" class="form-control">
-                      </input>
-                    </div>
-
-
-                    <div class="form-group">
-                      <label><strong>Description</strong></label>
-                      <textarea name="description" rows="10" cols="30" class="form-control">
-                      </textarea>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                      <label><strong>Upload the Notes</strong></label>
-                      <div class="custom-file">
-                        <br><br>
-                        <input type="file" class="custom-file-input" name="fileUpload" id="file-upload" required>
-                        <label class="custom-file-label" for="file-upload"><div id="file-upload-filename"></div></label>
-
-                        <br>
-                        @error('fileUpload')
-                          <span class="text-danger"><strong>&nbsp;{{$message}}</strong></span>
-                      @enderror
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    
+                    <button type="submit" class="btn btn-primary">Search</button>
                     </form>
                     <br><br>
 
@@ -85,4 +59,5 @@ active disabled
 
     </div>
 </div>
+
 @endsection

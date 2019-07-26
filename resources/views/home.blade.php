@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
+
 @section('homeactive')
-active
+active disabled
 @endsection
+
 
 @section('content')
 
@@ -15,7 +17,10 @@ active
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <div class="card">
+                    <div class="card-header">Top Notes</div>
+                    </div>
+                    <br>
                     @foreach($uploads as $upload)
                     <div style="height: auto;
                                 width:auto;
@@ -25,22 +30,25 @@ active
                     <div class="jumbotron jumbotron-fluid" style="background: none !important;">
                       <div class="container">
                         <br>
-                        <p class="lead"><h1><a style="color: #595959; text-decoration:none" target="_blank" href="{{url('/storage/'.$upload->file)}}">{{$upload->description}}</a></a></h1></p>
+                        <p class="lead"><h1><a  class="display-4" style="color: #595959; text-decoration:none" target="_blank" href="{{url('/storage/'.$upload->file)}}">{{$upload->description}}</a></a></h1></p>
                         <br>
                         <br>
-                        <p class="lead">Branch : {{$upload->branch_name}}</p>
+                        <p class="lead"><strong>Semester</strong> : {{$upload->semester_name}}</p>
                         <br>
                         <br>
-                        <p class="lead">Subject : {{$upload->subject_name}}</p>
+                        <p class="lead"><strong>Branch</strong> : {{$upload->branch_name}}</p>
                         <br>
                         <br>
-                        <p class="lead">Uploaded by : {{$upload->user->name}}</p>
+                        <p class="lead"><strong>Subject</strong> : {{$upload->subject_name}}</p>
                         <br>
                         <br>
-                        <p class="lead">Year : {{$upload->year}}</p>
+                        <p class="lead"><strong>Uploaded by</strong> :<a style="color: #595959; text-decoration:none;font-size: 15px;" href="{{ route('profile',['name'=>$upload->user->name,'id'=>$upload->user->id])}}">&nbsp;{{$upload->user->name}}</a>                          </p>
                         <br>
                         <br>
-                        <p class="lead">Votes : {{$upload->votes}}</p>
+                        <p class="lead"><strong>Year</strong> : {{$upload->year}}</p>
+                        <br>
+                        <br>
+                        <p class="lead"><strong>Votes</strong> : {{$upload->votes}}</p>
                         <br>
                       </div>
                     </div>
@@ -48,8 +56,8 @@ active
                     @endforeach
                     {{$uploads->links()}}
                     <br><br>
-                    
+
                 </div>
-           
+
 </div>
 @endsection

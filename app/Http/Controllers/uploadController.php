@@ -24,6 +24,15 @@ class uploadController extends Controller
     }
     public function upload(Request $request)
     {
+      $request->validate([
+        'fileUpload' => 'required',
+          'subject_name'=>'required',
+          'branch_name'=>'required',
+          'semester_name'=>'required',
+          'description'=>'required',
+          'year'=>'required'
+      ]);
+
       $uploadfile= $request->file('fileUpload')->store('pdfs');
 
       $request->validate([

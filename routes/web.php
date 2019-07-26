@@ -21,7 +21,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/upload', 'uploadController@store')->name('store');
 
+Route::get('/search', 'SearchController@index')->name('search');
+
 Route::post('/upload', 'uploadController@upload')->name('upload');
+
+Route::post('/searchresults', 'SearchController@search')->name('searchquery');
 
 // Route::get('/profile/{name}', 'ProfileController@index')->name('profile');
 

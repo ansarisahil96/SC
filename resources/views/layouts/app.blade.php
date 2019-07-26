@@ -81,8 +81,11 @@
                         <li class="nav-item">
                             <a class="nav-link @yield('homeactive')" href="{{ route('home') }}">{{ __('Home') }}</a>
                         </li>
-                        <li class="nav-item @yield('uploadactive')">
-                            <a class="nav-link" href="{{ route('upload') }}">{{ __('Upload PDF') }}</a>
+                        <li class="nav-item">
+                            <a class="nav-link @yield('uploadactive')" href="{{ route('upload') }}">{{ __('Upload Notes') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @yield('searchactive')" href="{{ route('search') }}">{{ __('Search Notes') }}</a>
                         </li>
                             <li class="nav-item dropdown @yield('profileactive')">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -90,11 +93,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="{{ route('profile',['name'=>Auth::user()->name,'id'=>Auth::user()->id])}}">
-
-
-
-
+                                  <a class="dropdown-item @yield('profiledis')" href="{{ route('profile',['name'=>Auth::user()->name,'id'=>Auth::user()->id])}}">
                                       {{ __('Your Uploads') }}
                                   </a>
 
@@ -118,7 +117,7 @@
         </nav>
          <!-- main -->
     <div class="w3layouts-main">
-	    
+
 			<div class="header-left-bottom">
         <main class="py">
             @yield('content')
@@ -126,7 +125,7 @@
         </main>
         </div>
         </div>
-        
+
     </div>
 
 

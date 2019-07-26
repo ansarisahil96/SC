@@ -11,10 +11,12 @@ class ProfileController extends Controller
   {
 
       $uploads=Upload::where('user_id',$id)->paginate(2);
+      $username=$name;
       
-
-      return view('profile.profilehome',compact('uploads'));
+      return view('profile.profilehome',compact('uploads','username'));
 
 
   }
+
+
 }
